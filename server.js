@@ -9,7 +9,10 @@ const usersRoute = require('./routes/users')
 //const db = require('./config/keys').mongoURI;
 const db = " mongodb+srv://godfrea:23199100@cluster0-tupjt.mongodb.net/test?retryWrites=true&w=majority";
 const app =express();
+var cors = require('cors');
 
+
+app.use(cors());
 //set the bodyPaser Middleware
 app.use(bodyParser.urlencoded( { extended:false  } ));
 app.use(bodyParser.json());

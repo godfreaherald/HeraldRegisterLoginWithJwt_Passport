@@ -16,7 +16,9 @@ const User = require("../models/User");
 // @access Public
 router.post("/register", (req, res) => {
     // Form validation
-  
+ 
+
+
   const { errors, isValid } = validateRegisterInput(req.body);
   
   // Check validation
@@ -41,7 +43,7 @@ router.post("/register", (req, res) => {
             newUser.password = hash;
             newUser
               .save()
-              .then(user => res.json(user))
+              .then(user => res.status(201).json(user))
               .catch(err => console.log(err));
           });
         });
